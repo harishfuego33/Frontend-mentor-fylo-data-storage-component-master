@@ -1,13 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+	--PaleBlue: hsl(243, 100%, 93%);
+	--GrayishBlue: hsl(229, 7%, 55%);
+	--DarkBlue: hsl(228, 56%, 26%);
+	--VeryDarkBlue: hsl(229, 57%, 11%);
+	--sandel: hsl(6, 100%, 80%);
+	--pink: hsl(335, 100%, 65%);
+	--white: #fff;
+}
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background-color: var(--VeryDarkBlue);
+	background-image: url(../public/images/bg-desktop.png);
+	background-position: bottom;
+	background-size: 100% 60%;
+	background-repeat: no-repeat;
+	background-position-y: 120%;
+}
+#root {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.section-main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
+	width: min(82.5%, 105rem);
+	min-width: 41rem;
+	height: 23rem;
+	gap: 3rem;
+	z-index: 0;
+	position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* secction - 1 only */
+
+.section__1 {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	background-color: var(--DarkBlue);
+	width: 41rem;
+	height: 100%;
+	padding: 6rem;
+	border-radius: 1rem;
+	border-top-right-radius: 11.5rem;
+}
+.section__1-heading {
+	width: 15rem;
+}
+.section__1-logo {
+	width: 100%;
+	height: 100%;
+}
+
+.section__1-icons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+}
+.section__1-icon-box {
+	width: 4.5rem;
+	height: 4.5rem;
+	padding: 1rem;
+	background-color: var(--VeryDarkBlue);
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.section__2 {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	background-color: var(--DarkBlue);
+	width: 61rem;
+	height: 74%;
+	border-radius: 1rem;
+	padding: 4rem;
+}
+.section__2-heading {
+	color: var(--PaleBlue);
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+.level__scale {
+	width: 100%;
+	height: 2rem;
+	background-color: var(--VeryDarkBlue);
+	border-radius: 5rem;
+	padding: 3px;
+}
+.level {
+	height: 90%;
+	width: 81.5%;
+	background-image: linear-gradient(120deg, var(--sandel), var(--pink));
+	border-radius: inherit;
+	position: relative;
+}
+.level::after {
+	content: "";
+	height: 10px;
+	width: 10px;
+	background-color: #fff;
+	position: absolute;
+	right: 2px;
+	top: 1px;
+	border-radius: 50%;
+}
+.digital__scale {
+	display: inline-flex;
+	justify-content: space-between;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--PaleBlue);
+}
+.storage__meter {
+	position: absolute;
+	top: -1.5rem;
+	right: 4rem;
+	width: 20rem;
+	height: 10rem;
+	background: var(--white);
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+.storage__meter strong {
+	font-size: 5rem;
+}
+.storage__meter span {
+	color: var(--GrayishBlue);
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+.storage__meter::after {
+	content: "";
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	bottom: -2.3rem;
+	right: 0;
+	background-color: var(--white);
+	clip-path: polygon(100% 0, 30% 0, 100% 100%);
+}
+
+@media only screen and (max-width: 830px) {
+	body {
+		background-image: url(../public/images/bg-mobile.png);
+		background-size: 100%;
+		background-position-y: initial;
+	}
+	.section-main {
+		flex-direction: column;
+		justify-content: start;
+		height: 43rem;
+		width: 41rem;
+		margin: 2rem;
+		gap: 2;
+	}
+	.section__1 {
+		height: 22.4rem;
+		width: 41rem;
+	}
+	.section__2 {
+		height: 18.6rem;
+		width: 41rem;
+	}
+	.storage__meter {
+		top: initial;
+		right: initial;
+		left: 10rem;
+		bottom: -3rem;
+		height: 7rem;
+	}
+	.storage__meter::after {
+		display: none;
+	}
 }
